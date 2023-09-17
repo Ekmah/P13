@@ -2,4 +2,4 @@ version: 1.0
 jobs:
   build:
     docker:
-      - image: "ekmah/p13_web:1.1.0"
+      - image: "ekmah/p13_web:1.1.1"

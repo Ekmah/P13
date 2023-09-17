@@ -1,7 +1,7 @@
 services:
   web:
     build: .
-    image: "ekmah/p13_web:1.1.0"
+    image: "ekmah/p13_web:1.1.1"
   #  environment:
   #    MYENV: EXAMPLE
     volumes:
