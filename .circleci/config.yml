@@ -1,6 +1,7 @@
 version: 1.0
 jobs:
   build:
+    resource_class: large
     steps:
       - setup_remote_docker:
           version: 20.10.14
