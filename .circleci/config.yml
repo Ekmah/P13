@@ -22,11 +22,14 @@ jobs:
       - run:
           name: Building
           command: docker-compose up -d
-  tests:
-    steps:
       - run:
           name: Tests
           command: python manage.py test
+#  tests:
+#    steps:
+#      - run:
+#          name: Tests
+#          command: python manage.py test
 #  deploy:
 #    steps:
 #      - run:
