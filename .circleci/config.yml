@@ -11,7 +11,6 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - tests
       - run:
           name: Install dependencies
           command: |
@@ -23,13 +22,11 @@ jobs:
       - run:
           name: Building
           command: docker-compose up -d
-    tests:
-      steps:
-        - run:
-            name: Tests
-            command: |
-              pip3 install -r requirements.txt
-              python manage.py test
+      - run:
+          name: Tests
+          command: |
+            pip3 install -r requirements.txt
+            python manage.py test
 #  deploy:
 #    steps:
 #      - run:
