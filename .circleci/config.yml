@@ -27,7 +27,9 @@ jobs:
     steps:
       - run:
           name: Tests
-          command: python manage.py test
+          command: |
+            pip3 install -r requirements.txt
+            python manage.py test
 #  deploy:
 #    steps:
 #      - run:
