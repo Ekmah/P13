@@ -5,9 +5,10 @@ from django.urls import reverse
 client = Client()
 
 
-class TestsProfiles(TestCase):
+class Tests(TestCase):
 
     def test_index(self):
+        print("Tests.test_index")
         response = client.get(reverse('index'))
         html = response.content
         assert '<title>Holiday Homes</title>' in str(html)
