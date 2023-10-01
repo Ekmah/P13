@@ -24,9 +24,6 @@ jobs:
           command: |
             pip3 install -r requirements.txt
             python manage.py test
-  container:
-    steps:
-      - checkout
       - when:
           condition:
             equal: [ master, $CIRCLE_BRANCH ]
@@ -34,6 +31,10 @@ jobs:
             - run:
                 name: Building
                 command: docker-compose up -d
+  container:
+    steps:
+      - checkout
+
 #  deploy:
 #    steps:
 #      - run:
