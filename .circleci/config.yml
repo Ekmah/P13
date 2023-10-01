@@ -24,7 +24,9 @@ jobs:
           command: |
             pip3 install -r requirements.txt
             python manage.py test
-            echo pipeline.git.branch
+            echo "This is pipeline ID << pipeline.id >>"
+            echo "Building branch $CIRCLE_BRANCH"
+            echo "Building branch << pipeline.git.branch >>"
   container:
     steps:
       - checkout
