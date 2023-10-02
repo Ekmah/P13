@@ -4,7 +4,7 @@ jobs:
   build:
     docker:
       - image: docker:24.0.6-git
-      - image: alpine:3.15
+#      - image: alpine:3.15
       - image: heroku/heroku:22
       - image: python:3.9-slim
 
