@@ -33,7 +33,6 @@ jobs:
                 name: Building
                 command: |
                   docker-compose up -d
-          docker:
             - run:
                 name: Deploying
                 command: |
