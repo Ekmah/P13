@@ -4,7 +4,7 @@ jobs:
   build:
     docker:
       - image: docker:24.0.6-git
-      - image: alpine:3.15
+      - image: heroku:22
       - image: python:3.9-slim
 
 #    resource_class: large
@@ -32,6 +32,10 @@ jobs:
                 name: Building
                 command: |
                   docker-compose up -d
+            - run:
+                name: Deploying
+                command: |
+                  heroku --version
 #  deploy:
 #    steps:
 #      - run:
