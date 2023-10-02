@@ -4,7 +4,8 @@ jobs:
   build:
     docker:
       - image: docker:24.0.6-git
-      - image: heroku:22
+      - image: alpine:3.15
+      - image: heroku/heroku:22
       - image: python:3.9-slim
 
 #    resource_class: large
@@ -32,10 +33,12 @@ jobs:
                 name: Building
                 command: |
                   docker-compose up -d
+          docker:
             - run:
                 name: Deploying
                 command: |
                   heroku --version
+#                  git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git main
 #  deploy:
 #    steps:
 #      - run:
