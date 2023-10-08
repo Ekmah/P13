@@ -16,6 +16,7 @@ sentry_sdk.init(
     profiles_sample_rate=1.0,
 )
 
+IS_HEROKU_APP = "DYNO" in os.environ and not "CI" in os.environ
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -27,13 +28,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = [
-    'localhost',
-    '0.0.0.0',
-    '127.0.0.1'
-]
+if not IS_HEROKU_APP:
+    DEBUG = True
+if IS_HEROKU_APP:
+    ALLOWED_HOSTS = ["*"]
+else:
+    ALLOWED_HOSTS = [
+        'localhost',
+        '0.0.0.0',
+        '127.0.0.1'
+    ]
 
 
 # Application definition

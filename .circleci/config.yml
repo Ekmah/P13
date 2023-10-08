@@ -43,13 +43,14 @@ jobs:
                 command: |
                   heroku container:login
             - run:
-                name: Deploying
+                name: Pushing to Registry
                 command: |
                   docker tag project-web registry.heroku.com/p13-open-classrooms/web
                   docker push registry.heroku.com/p13-open-classrooms/web
             - run:
                 name: Heroku release
                 command: |
+                  heroku container:release --help
                   heroku container:release web -a p13-open-classrooms
 #  deploy:
 #    steps:
