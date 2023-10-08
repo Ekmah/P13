@@ -15,11 +15,10 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            apk add --no-cache \
-              py3-pip
-            pip install \
-              docker-compose==1.12.0 \
-              awscli==1.11.76
+            apk update
+            apk add curl curl-dev bash
+            apk add --no-cache py3-pip
+            pip install docker-compose==1.12.0 awscli==1.11.76
       - run:
           name: Tests
           command: |
