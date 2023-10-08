@@ -6,6 +6,10 @@ jobs:
       - image: docker:24.0.6-git
       - image: alpine:3.15
       - image: python:3.9-slim
+      - image: heroku/heroku:22
+        auth:
+            username: $DOCKER_USERNAME
+            password: $DOCKER_LOGIN
 
 #    resource_class: large
     steps:
@@ -35,7 +39,7 @@ jobs:
             - run:
                 name: Docker Login
                 command:
-                  docker login -u ${DOCKER_USERNAME} -p ${DOCKER_LOGIN}
+                  docker login -u $DOCKER_USERNAME -p $DOCKER_LOGIN
             - run:
                 name: Deploying
                 command: |
