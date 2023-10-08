@@ -24,15 +24,9 @@ jobs:
           command: |
             pip3 install -r requirements.txt
             python manage.py test
-      - run:
-          name: login docker
-          command: |
-            docker login -p ${DOCKER_LOGIN} -u ${DOCKER_USERNAME}
       - when:
           condition:
             equal: [ master, << pipeline.git.branch >> ]
-          docker:
-            - image: heroku/heroku:22
           steps:
             - run:
                 name: Building
@@ -41,8 +35,9 @@ jobs:
             - run:
                 name: Deploying
                 command: |
-                  heroku --version
-#                  git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git main
+                  docker image ls
+#                  docker tag <image> registry.heroku.com/p13-open-classrooms/web
+#                  docker push registry.heroku.com/p13-open-classrooms/web
 #  deploy:
 #    steps:
 #      - run:
