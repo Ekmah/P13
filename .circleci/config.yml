@@ -39,15 +39,17 @@ jobs:
                   docker login -u $DOCKER_USERNAME -p $DOCKER_LOGIN
             - heroku/install
             - run:
-                name: Heroku cmds
+                name: Heroku login
                 command: |
-                  heroku --version
                   heroku container:login
             - run:
                 name: Deploying
                 command: |
                   docker tag project-web registry.heroku.com/p13-open-classrooms/web
                   docker push registry.heroku.com/p13-open-classrooms/web
+            - run:
+                name: Heroku release
+                command: |
                   heroku container:release web
 #  deploy:
 #    steps:
