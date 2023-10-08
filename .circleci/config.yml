@@ -43,16 +43,12 @@ jobs:
                 command: |
                   heroku --version
                   heroku container:login
-            - heroku/push-docker-image:
-              process-types: web
-            - heroku/release-docker-image:
-              process-types: web
             - run:
                 name: Deploying
                 command: |
-                  docker image ls
                   docker tag project-web registry.heroku.com/p13-open-classrooms/web
                   docker push registry.heroku.com/p13-open-classrooms/web
+                  heroku container:release web
 #  deploy:
 #    steps:
 #      - run:
