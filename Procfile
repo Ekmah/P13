@@ -1,1 +1,1 @@
-web: gunicorn oc_lettings_site.wsgi
+web: python subfolder/manage.py runserver 0.0.0.0:$PORT
