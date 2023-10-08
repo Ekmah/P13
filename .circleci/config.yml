@@ -38,8 +38,12 @@ jobs:
                   docker-compose up -d
             - run:
                 name: Docker Login
-                command:
+                command: |
                   docker login -u $DOCKER_USERNAME -p $DOCKER_LOGIN
+            - run:
+                name: Heroku cmds
+                command: |
+                  heroku --version
             - run:
                 name: Deploying
                 command: |
