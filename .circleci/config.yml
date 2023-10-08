@@ -36,8 +36,8 @@ jobs:
                 name: Deploying
                 command: |
                   docker image ls
-#                  docker tag <image> registry.heroku.com/p13-open-classrooms/web
-#                  docker push registry.heroku.com/p13-open-classrooms/web
+                  docker tag project-web registry.heroku.com/p13-open-classrooms/web
+                  docker push registry.heroku.com/p13-open-classrooms/web
 #  deploy:
 #    steps:
 #      - run:
