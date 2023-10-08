@@ -50,7 +50,7 @@ jobs:
             - run:
                 name: Heroku release
                 command: |
-                  heroku container:release web
+                  heroku container:release web -a p13-open-classrooms
 #  deploy:
 #    steps:
 #      - run:
