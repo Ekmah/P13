@@ -75,3 +75,24 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 
 - Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1` 
 - Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
+
+## Déploiement :
+FAIT AVEC:<br>
+https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR/tree/1b45bda8dcdeac129d2c88b7511191c8d066c7b7 <br>
+(Python-OC-Lettings-FR commit du 17/09/2020)
+L'application est automatiquement déployée à chaque commits qui sont push dans le repository Git. Pour les branches autres que master, la pipeline exécutera toutes les étapes jusqu'au test. Pour la branche master, la Pipeline exécutera toutes les étapes, dont également la conteneurisation ainsi que le déploiement sur Internet.
+
+La pipeline CI/CD installe toutes les dépendances elle-même.
+Elle envoie l’app sur Heroku sous le nom de `p13-open-classrooms`. 
+Si aucune application sous ce nom existe, le déploiement ne fonctionnera pas.
+
+Si vous voulez déployer le site après avoir changé le code, vous n’avez rien à faire.
+CircleCI détectera tout changement sur le repo GitHub et déclenchera une pipeline automatiquement, qui viendra déployer ou redéployer l’app sur Heroku toute seule.
+
+Si vous voulez re-déployer le site sans avoir changé le code, vous pouvez utiliser le bouton “Rerun workflow from start” dans la colonne “actions” de la liste des pipelines dans CircleCI.
+Attention, choisissez la bonne pipeline.
+
+Si vous voulez rendre l’application déployée inaccessible, vous pouvez activer le Maintenance Mode dans les settings de votre application Heroku.
+
+Les builds CI/CD sont visible içi:<br>
+https://app.circleci.com/pipelines/github/Ekmah/P13
