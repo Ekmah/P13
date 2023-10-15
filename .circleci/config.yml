@@ -8,7 +8,6 @@ jobs:
       - image: docker:24.0.6-git
       - image: alpine:3.15
       - image: python:3.9-slim
-#    resource_class: large
     steps:
       - checkout
       - setup_remote_docker
@@ -52,9 +51,3 @@ jobs:
                 command: |
                   heroku container:release --help
                   heroku container:release web -a p13-open-classrooms
-#  deploy:
-#    steps:
-#      - run:
-#          name: Publishing
-#          command: |
-#            heroku
