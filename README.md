@@ -79,7 +79,7 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 ## Déploiement :
 FAIT AVEC:<br>
 https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR/tree/1b45bda8dcdeac129d2c88b7511191c8d066c7b7 <br>
-(Python-OC-Lettings-FR commit du 17/09/2020)
+(Python-OC-Lettings-FR commit du 17/09/2020) <br>
 L'application est automatiquement déployée à chaque commits qui sont push dans le repository Git. Pour les branches autres que master, la pipeline exécutera toutes les étapes jusqu'au test. Pour la branche master, la Pipeline exécutera toutes les étapes, dont également la conteneurisation ainsi que le déploiement sur Internet.
 
 La pipeline CI/CD installe toutes les dépendances elle-même.
