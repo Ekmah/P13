@@ -42,7 +42,7 @@ jobs:
                 command: |
                   docker image ls
                   docker image tag project-web:latest ekmah/project-web:latest
-#                  docker push ekmah/p13_web:latest
+                  docker push ekmah/project-web:latest
             - heroku/install
             - run:
                 name: Heroku login
