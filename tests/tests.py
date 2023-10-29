@@ -11,4 +11,4 @@ class Tests(TestCase):
         print("Tests.test_index")
         response = client.get(reverse('index'))
         html = response.content
-        assert '<title>Holiday Homes</title>' in str(html)
+        assert '<title>Holiday Homes 2</title>' in str(html)
