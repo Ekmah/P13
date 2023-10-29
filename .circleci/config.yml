@@ -41,7 +41,7 @@ jobs:
                 name: Docker Hub Push
                 command: |
                   docker image ls
-                  docker image tag project-web:latest project-web:${CIRCLE_TAG}
+                  docker image tag project-web:latest ekmah/p13_web:${CIRCLE_TAG}
 #                  docker push ekmah/p13_web:latest
             - heroku/install
             - run:
