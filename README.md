@@ -97,8 +97,8 @@ Si vous voulez rendre l’application déployée inaccessible, vous pouvez activ
 Les builds CI/CD sont visible içi:<br>
 https://app.circleci.com/pipelines/github/Ekmah/P13
 
-Attention, de multiples variables d'environnements sont utilisées.<br>
-Les variables DOCKER_USERNAME et DOCKER_LOGIN sont défini dans les paramètres du projet CircleCI.
-<br>
-Les variables SECRET_KEY et SENTRY_DSN sont définies dans un fichier .env à la racine du projet.
+Attention, de multiples variables d'environnement sont utilisées.<br>
+Les variables DOCKER_USERNAME, DOCKER_LOGIN, HEROKU_API_KEY ainsi que HEROKU_APP_NAME sont défini dans les paramètres du projet CircleCI.<br>
+Les variables d'environnement HEROKU_API_KEY et HEROKU_APP_NAME sont automatiquement utilisées par `heroku container:login` dans le config.yml<br>
+Les variables SECRET_KEY et SENTRY_DSN sont définies dans un fichier .env dans le même dossier que le fichier settings.py.
 
