@@ -41,7 +41,6 @@ jobs:
                 name: Docker Hub Push
                 command: |
                   echo '$CIRCLE_TAG'
-                  echo ${CIRCLE_TAG}
                   echo '${CIRCLE_TAG}'
                   docker tag p13_web:latest p13_web:${CIRCLE_TAG}
                   docker push ekmah/p13_web:${CIRCLE_TAG}
