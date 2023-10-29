@@ -40,7 +40,7 @@ jobs:
             - run:
                 name: Docker Hub Push
                 command: |
-                  docker image ps
+                  docker image ls
 #                  docker push ekmah/p13_web:latest
             - heroku/install
             - run:
