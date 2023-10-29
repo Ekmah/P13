@@ -96,3 +96,9 @@ Si vous voulez rendre l’application déployée inaccessible, vous pouvez activ
 
 Les builds CI/CD sont visible içi:<br>
 https://app.circleci.com/pipelines/github/Ekmah/P13
+
+Attention, de multiples variables d'environnements sont utilisées.<br>
+Les variables DOCKER_USERNAME et DOCKER_LOGIN sont défini dans les paramètres du projet CircleCI.
+<br>
+Les variables SECRET_KEY et SENTRY_DSN sont définies dans un fichier .env à la racine du projet.
+

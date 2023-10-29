@@ -1,10 +1,13 @@
 import os
+import environ
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 
+env = environ.Env()
+environ.Env.read_env()
+
 sentry_sdk.init(
-    dsn="https://66dcd9754256c8bf524c9851e2ad17a9@o4505765314953216."
-        "ingest.sentry.io/4505765317312512",
+    dsn=env('SENTRY_DSN'),
     integrations=[DjangoIntegration()],
     # Set traces_sample_rate to 1.0 to capture 100%
     # of transactions for performance monitoring.
@@ -26,7 +29,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if not IS_HEROKU_APP:
