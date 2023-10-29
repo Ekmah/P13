@@ -56,5 +56,4 @@ jobs:
             - run:
                 name: Heroku release
                 command: |
-                  heroku container:release --help
                   heroku container:release web -a p13-open-classrooms
