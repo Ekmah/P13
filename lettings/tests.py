@@ -1,6 +1,6 @@
 from django.test import TestCase, Client
 from django.urls import reverse
-from tests.test_conf import *
+from tests.test_conf import populate_test_db
 
 # import pytest
 client = Client()

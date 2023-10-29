@@ -1,5 +1,7 @@
-from profiles.models import *
-from lettings.models import *
+from django.contrib.auth.models import User
+
+from profiles.models import Profile
+from lettings.models import Letting, Address
 
 
 def populate_test_db():

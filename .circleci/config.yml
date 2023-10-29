@@ -24,6 +24,7 @@ jobs:
           command: |
             pip3 install -r requirements.txt
             python manage.py test
+            flake8
       - when:
           condition:
             equal: [ master, << pipeline.git.branch >> ]
@@ -36,6 +37,10 @@ jobs:
                 name: Docker Login
                 command: |
                   docker login -u $DOCKER_USERNAME -p $DOCKER_LOGIN
+            - run:
+                name: Docker Hub Push
+                command: |
+                  docker push ekmah/p13_web:$CIRCLE_TAG
             - heroku/install
             - run:
                 name: Heroku login
