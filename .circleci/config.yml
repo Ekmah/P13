@@ -40,7 +40,10 @@ jobs:
             - run:
                 name: Docker Hub Push
                 command: |
-                  docker push ekmah/p13_web:$CIRCLE_TAG
+                  echo '$CIRCLE_TAG'
+                  echo ${CIRCLE_TAG}
+                  echo '${CIRCLE_TAG}'
+                  docker push ekmah/p13_web:${CIRCLE_TAG}
             - heroku/install
             - run:
                 name: Heroku login
